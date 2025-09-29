@@ -12,3 +12,8 @@ export interface Animal {
     image: string;
 
 }
+
+export interface RandomAnimalsResult{
+    options:Animal[];
+    correct:Animal;
+}
