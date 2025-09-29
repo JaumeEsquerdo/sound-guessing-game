@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": { "en": "Wolf", "es": "Lobo" },
+    "type": { "en": "Mammal", "es": "Mamífero" },
+    "sound": "/sounds/wolf.mp3",
+    "image": "/images/wolf.jpg"
+  },
+  {
+    "id": 2,
+    "name": { "en": "Owl", "es": "Búho" },
+    "type": { "en": "Bird", "es": "Ave" },
+    "sound": "/sounds/owl.mp3",
+    "image": "/images/owl.jpg"
+  },
+  {
+    "id": 3,
+    "name": { "en": "Dolphin", "es": "Delfín" },
+    "type": { "en": "Mammal", "es": "Mamífero" },
+    "sound": "/sounds/dolphin.mp3",
+    "image": "/images/dolphin.jpg"
+  },
+  {
+    "id": 4,
+    "name": { "en": "Peacock", "es": "Pavo real" },
+    "type": { "en": "Bird", "es": "Ave" },
+    "sound": "/sounds/peacock.mp3",
+    "image": "/images/peacock.jpg"
+  },
+  {
+    "id": 5,
+    "name": { "en": "Hyena", "es": "Hiena" },
+    "type": { "en": "Mammal", "es": "Mamífero" },
+    "sound": "/sounds/hyena.mp3",
+    "image": "/images/hyena.jpg"
+  },
+  {
+    "id": 6,
+    "name": { "en": "Frog", "es": "Rana" },
+    "type": { "en": "Amphibian", "es": "Anfibio" },
+    "sound": "/sounds/frog.mp3",
+    "image": "/images/frog.jpg"
+  },
+  {
+    "id": 7,
+    "name": { "en": "Penguin", "es": "Pingüino" },
+    "type": { "en": "Bird", "es": "Ave" },
+    "sound": "/sounds/penguin.mp3",
+    "image": "/images/penguin.jpg"
+  },
+  {
+    "id": 8,
+    "name": { "en": "Camel", "es": "Camello" },
+    "type": { "en": "Mammal", "es": "Mamífero" },
+    "sound": "/sounds/camel.mp3",
+    "image": "/images/camel.jpg"
+  },
+  {
+    "id": 9,
+    "name": { "en": "Cobra", "es": "Cobra" },
+    "type": { "en": "Reptile", "es": "Reptil" },
+    "sound": "/sounds/cobra.mp3",
+    "image": "/images/cobra.jpg"
+  },
+  {
+    "id": 10,
+    "name": { "en": "Tarantula", "es": "Tarántula" },
+    "type": { "en": "Arachnid", "es": "Arácnido" },
+    "sound": "/sounds/tarantula.mp3",
+    "image": "/images/tarantula.jpg"
+  }
+]
