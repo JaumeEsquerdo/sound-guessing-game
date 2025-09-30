@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAnimals } from '../hooks/useAnimals';
 import type { Animal } from '../interfaces/Animal';
 import { getRandomAnimals } from '../utils/utils';
+import '../css/animalGame.css';
 
 const AnimalGame = () => {
     const { data: animals = [], isLoading, error } = useAnimals();
@@ -83,12 +84,12 @@ const AnimalGame = () => {
     if (!animals) return <p>Animales no encontrados</p>
 
     return (
-        <div>
-            <h2>Modo: {mode}</h2>
-            <p>Racha actual: {streak}</p>
+        <div className='AnimalGame-wrapper'>
+            <h2 className='AnimalGame-h2'>Modo: {mode}</h2>
+            <p className='AnimalGame-p'>Racha actual: {streak}</p>
 
             {/* Lista de animales para elegir */}
-            <div style={{ display: 'flex', gap: '1rem' }}>
+            <div className='AnimalGame-options'>
                 {currentAnimals.map(animal => (
                     <button
                         key={animal.id}
@@ -101,7 +102,7 @@ const AnimalGame = () => {
 
             {/* Modal de fin de challenge */}
             {isEndModal && (
-                <div className="modal">
+                <div className="EndModal">
                     <p>¡Has llegado al final de los animales disponibles!</p>
                     <button
                         onClick={() => {
@@ -118,8 +119,8 @@ const AnimalGame = () => {
             {mode === "challenge" && <p>Animales restantes: {remainingAnimals.length}</p>}
 
             {/* Botón para cambiar de modo */}
-            <div style={{ marginTop: '1rem' }}>
-                <button onClick={() => {
+            <div className='ChangeMode'>
+                <button className='ChamgeMode-btn' onClick={() => {
                     setMode(mode === "arcade" ? "challenge" : "arcade");
                     setStreak(0)
                     if (mode === "arcade") setRemainingAnimals(animals);
