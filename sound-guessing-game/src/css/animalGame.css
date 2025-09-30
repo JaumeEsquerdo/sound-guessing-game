@@ -1,4 +1,43 @@
-.AnimalGame-wrapper{}
-.AnimalGame-h2{}
-.AnimalGame-p{}
-.AnimalGame-options{}
+.AnimalGame-wrapper{
+    width: 720px;
+    background-color: rgba(238, 243, 247, 0.82);
+    height: 600px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px;
+}
+.AnimalGame-h2{
+    font-size: 1.2rem;
+
+}
+.AnimalGame-p{
+    font-size: 1rem;
+}
+.AnimalGame-options{
+display: flex;
+gap: 12px;
+}
+.Option-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 380px;
+    background-color: rgb(18, 87, 87);
+    border-radius: 12px;
+    transition: background-color 0.3s ease-out;
+}
+.Option-wrapper:hover{
+background-color: rgb(61, 113, 96);
+}
+.Option-name{
+    color: white;
+}
+.Button-option{
+    cursor: pointer;
+    border-radius: 12px;
+    border: none;
+}

@@ -1,5 +1,6 @@
 import AnimalGame from './components/AnimalGame.tsx'
 import Header from './components/Header.tsx'
+import Footer from './components/Footer.tsx'
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     <div className='Wrapper'>
       <Header />
       <AnimalGame />
-
+      <Footer />
     </div>
   )
 }

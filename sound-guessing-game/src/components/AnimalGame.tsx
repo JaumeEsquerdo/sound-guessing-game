@@ -86,16 +86,32 @@ const AnimalGame = () => {
     return (
         <div className='AnimalGame-wrapper'>
             <h2 className='AnimalGame-h2'>Modo: {mode}</h2>
+
+            {/* Botón para cambiar de modo */}
+            <div className='ChangeMode'>
+                <button className='ChamgeMode-btn' onClick={() => {
+                    setMode(mode === "arcade" ? "challenge" : "arcade");
+                    setStreak(0)
+                    if (mode === "arcade") setRemainingAnimals(animals);
+                }}>
+                    Cambiar a {mode === "arcade" ? "Challenge" : "Arcade"}
+                </button>
+            </div>
+
             <p className='AnimalGame-p'>Racha actual: {streak}</p>
 
             {/* Lista de animales para elegir */}
             <div className='AnimalGame-options'>
                 {currentAnimals.map(animal => (
                     <button
+                        className='Button-option'
                         key={animal.id}
                         onClick={() => handleAnswer(animal.id)}
                     >
-                        {animal.name.es} {/* o imagen si tienes animal.image */}
+                        <div className='Option-wrapper'>
+                            {/* <img src="" alt="" /> */}
+                            <p className='Option-name'>{animal.name.es}</p>
+                        </div>
                     </button>
                 ))}
             </div>
@@ -116,18 +132,9 @@ const AnimalGame = () => {
                     </button>
                 </div>
             )}
+
             {mode === "challenge" && <p>Animales restantes: {remainingAnimals.length}</p>}
 
-            {/* Botón para cambiar de modo */}
-            <div className='ChangeMode'>
-                <button className='ChamgeMode-btn' onClick={() => {
-                    setMode(mode === "arcade" ? "challenge" : "arcade");
-                    setStreak(0)
-                    if (mode === "arcade") setRemainingAnimals(animals);
-                }}>
-                    Cambiar a {mode === "arcade" ? "Challenge" : "Arcade"}
-                </button>
-            </div>
         </div>
     );
 
