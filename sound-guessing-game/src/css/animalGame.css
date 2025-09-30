@@ -11,6 +11,7 @@
 }
 
 .ChangeMode-btn {
+    color: var(--color-txt);
     border: var(--border-btn);
     cursor: pointer;
     padding: var(--padding-btn);
@@ -25,11 +26,13 @@
 
 .AnimalGame-h2 {
     font-size: 1.6rem;
+    color: var(--color-txt);
 
 }
 
 .AnimalGame-p {
     font-size: 1rem;
+    color: var(--color-txt);
 }
 
 .AnimalGame-options {
@@ -61,18 +64,20 @@
     border: none;
 }
 
-.Challenge-div{
+.Challenge-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
 }
-.Challenge-image{
+
+.Challenge-image {
     width: 200px;
 }
 
 .Challenge-sound {
+    color: var(--color-txt);
     border: var(--border-btn);
     background-color: aquamarine;
     cursor: pointer;

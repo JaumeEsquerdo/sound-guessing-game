@@ -3,7 +3,7 @@ import '../css/footer.css'
 const Footer = () => {
     return (
         <footer className="Footer">
-            rrss
+            guessing game hecho por <span>Jaume Esquerdo</span>
         </footer>
     );
 }
