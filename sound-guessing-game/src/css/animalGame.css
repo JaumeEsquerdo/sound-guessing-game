@@ -24,7 +24,7 @@
 }
 
 .AnimalGame-h2 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 
 }
 
@@ -34,7 +34,7 @@
 
 .AnimalGame-options {
     display: flex;
-    gap: 12px;
+    gap: 24px;
 }
 
 .Option-wrapper {
@@ -61,8 +61,18 @@
     border: none;
 }
 
+.Challenge-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.Challenge-image{
+    width: 200px;
+}
 
-.Button-sound {
+.Challenge-sound {
     border: var(--border-btn);
     background-color: aquamarine;
     cursor: pointer;
@@ -72,7 +82,7 @@
     transition: box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.Button-sound:hover {
+.Challenge-sound:hover {
     box-shadow: var(--box-s);
     transform: translateY(-4px);
 }
