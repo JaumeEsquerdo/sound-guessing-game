@@ -1,27 +1,43 @@
-.AnimalGame-wrapper{
-    width: 720px;
-    background-color: rgba(238, 243, 247, 0.82);
+.AnimalGame-wrapper {
+    min-width: 740px;
+    background-color: rgba(238, 243, 247, 0.61);
     height: 600px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    padding: 20px;
+    padding: 32px;
 }
-.AnimalGame-h2{
+
+.ChangeMode-btn {
+    border: var(--border-btn);
+    cursor: pointer;
+    padding: var(--padding-btn);
+    border-radius: var(--border-r);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ChangeMode-btn:hover {
+    transform: translateY(-4.4px);
+    box-shadow: var(--box-s);
+}
+
+.AnimalGame-h2 {
     font-size: 1.2rem;
 
 }
-.AnimalGame-p{
+
+.AnimalGame-p {
     font-size: 1rem;
 }
-.AnimalGame-options{
-display: flex;
-gap: 12px;
+
+.AnimalGame-options {
+    display: flex;
+    gap: 12px;
 }
-.Option-wrapper{
+
+.Option-wrapper {
     display: flex;
     flex-direction: column;
     width: 320px;
@@ -30,14 +46,33 @@ gap: 12px;
     border-radius: 12px;
     transition: background-color 0.3s ease-out;
 }
-.Option-wrapper:hover{
-background-color: rgb(61, 113, 96);
+
+.Option-wrapper:hover {
+    background-color: rgb(61, 113, 96);
 }
-.Option-name{
+
+.Option-name {
     color: white;
 }
-.Button-option{
+
+.Button-option {
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: var(--border-r);
     border: none;
+}
+
+
+.Button-sound {
+    border: var(--border-btn);
+    background-color: aquamarine;
+    cursor: pointer;
+    padding: var(--padding-btn);
+    border-radius: var(--border-r);
+    align-content: center;
+    transition: box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.Button-sound:hover {
+    box-shadow: var(--box-s);
+    transform: translateY(-4px);
 }

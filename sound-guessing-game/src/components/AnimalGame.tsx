@@ -85,11 +85,11 @@ const AnimalGame = () => {
 
     return (
         <div className='AnimalGame-wrapper'>
-            <h2 className='AnimalGame-h2'>Modo: {mode}</h2>
+            <h2 className='AnimalGame-h2'>Modo {mode}</h2>
 
             {/* Botón para cambiar de modo */}
             <div className='ChangeMode'>
-                <button className='ChamgeMode-btn' onClick={() => {
+                <button className='ChangeMode-btn' onClick={() => {
                     setMode(mode === "arcade" ? "challenge" : "arcade");
                     setStreak(0)
                     if (mode === "arcade") setRemainingAnimals(animals);
@@ -102,18 +102,38 @@ const AnimalGame = () => {
 
             {/* Lista de animales para elegir */}
             <div className='AnimalGame-options'>
-                {currentAnimals.map(animal => (
+                {currentAnimals[0] && (
                     <button
                         className='Button-option'
-                        key={animal.id}
-                        onClick={() => handleAnswer(animal.id)}
+                        onClick={() => handleAnswer(currentAnimals[0].id)}
                     >
                         <div className='Option-wrapper'>
-                            {/* <img src="" alt="" /> */}
-                            <p className='Option-name'>{animal.name.es}</p>
+                            <p className='Option-name'>{currentAnimals[0].name.es}</p>
                         </div>
                     </button>
-                ))}
+                )}
+
+                {/* UN SOLO botón ? en medio */}
+                {currentAnimals.length === 2 && (
+                    <div className='Sonido-div'>
+                        <p className=''>?</p>
+                        <button className='Button-sound' onClick={() => {/* reproducir audio */ }}>
+                        play sonido
+                    </button>
+                    </div>
+                    
+                )}
+
+                {currentAnimals[1] && (
+                    <button
+                        className='Button-option'
+                        onClick={() => handleAnswer(currentAnimals[1].id)}
+                    >
+                        <div className='Option-wrapper'>
+                            <p className='Option-name'>{currentAnimals[1].name.es}</p>
+                        </div>
+                    </button>
+                )}
             </div>
 
             {/* Modal de fin de challenge */}
