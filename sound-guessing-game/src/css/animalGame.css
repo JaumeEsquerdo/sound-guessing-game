@@ -1,6 +1,11 @@
 .AnimalGame-wrapper {
+    position: relative;
     min-width: 740px;
-    background-color: rgba(238, 243, 247, 0.61);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     height: 600px;
     border-radius: 12px;
     display: flex;
@@ -24,10 +29,36 @@
     box-shadow: var(--box-s);
 }
 
+.ChangeMode-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.AnimalGame-reset {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--border-r);
+    border: var(--border-btn);
+    color: var(--color-txt);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.AnimalGame-reset:hover {
+    transform: translateY(-4.4px);
+    box-shadow: var(--box-s);
+}
+
+.AnimalGame-reset:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
 .AnimalGame-h2 {
     font-size: 1.6rem;
     color: var(--color-txt);
-
 }
 
 .AnimalGame-p {
@@ -36,6 +67,7 @@
 }
 
 .AnimalGame-options {
+
     display: flex;
     gap: 24px;
 }
@@ -45,8 +77,10 @@
     flex-direction: column;
     width: 320px;
     height: 380px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     background-color: rgb(18, 87, 87);
-    border-radius: 12px;
+
     transition: background-color 0.3s ease-out;
 }
 
@@ -90,4 +124,9 @@
 .Challenge-sound:hover {
     box-shadow: var(--box-s);
     transform: translateY(-4px);
+}
+
+.Challenge-sound:active {
+    transform: translateY(2px);
+    box-shadow: none;
 }

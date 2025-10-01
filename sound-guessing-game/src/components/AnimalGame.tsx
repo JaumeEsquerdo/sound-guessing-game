@@ -85,7 +85,9 @@ const AnimalGame = () => {
 
     return (
         <div className='AnimalGame-wrapper'>
-            <h2 className='AnimalGame-h2'>Modo {mode}</h2>
+            <h2 className='AnimalGame-h2'>Modo <span
+                style={{ color: mode === "challenge" ? "#0784ba" : "" }}
+            >{mode}</span></h2>
 
             {/* Botón para cambiar de modo */}
             <div className='ChangeMode'>
@@ -93,13 +95,25 @@ const AnimalGame = () => {
                     setMode(mode === "arcade" ? "challenge" : "arcade");
                     setStreak(0)
                     if (mode === "arcade") setRemainingAnimals(animals);
-                }}>
+                }}
+                >
                     Cambiar a {mode === "arcade" ? "Challenge" : "Arcade"}
                 </button>
             </div>
 
             <p className='AnimalGame-p'>Racha actual: {streak}</p>
 
+            <button className='AnimalGame-reset'
+                onClick={() => {
+                    if (mode === "arcade") {
+                        startNewRoundArcade();
+                        setStreak(0)
+                    } else {
+                        startNewRoundChallenge();
+                        setStreak(0)
+                    }
+                }}
+            >Reiniciar</button>
             {/* Lista de animales para elegir */}
             <div className='AnimalGame-options'>
                 {currentAnimals[0] && (
