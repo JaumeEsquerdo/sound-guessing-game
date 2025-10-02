@@ -151,7 +151,7 @@
     color: white;
 }
 
-.SoundGuessing-div {
+.SoundPlay-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -165,11 +165,11 @@
     gap: 40px;
 }
 
-.SoundGuessing-image {
+.SoundPlay-image {
     width: 200px;
 }
 
-.SoundGuessing-sound {
+.SoundPlay-sound {
     color: var(--color-txt);
     border: var(--border-btn);
     background-color: aquamarine;
@@ -180,12 +180,12 @@
     transition: box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.SoundGuessing-sound:hover {
+.SoundPlay-sound:hover {
     box-shadow: var(--box-s);
     transform: translateY(-4px);
 }
 
-.SoundGuessing-sound:active {
+.SoundPlay-sound:active {
     transform: translateY(2px);
     box-shadow: none;
 }
