@@ -19,6 +19,9 @@
 
 .Header-h1 {
     font-size: 3rem;
+    color: #e1f6f6;
+}
+.Header-span{
     color: #184153;
 }
 

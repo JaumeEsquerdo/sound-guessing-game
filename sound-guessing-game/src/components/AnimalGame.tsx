@@ -15,7 +15,6 @@ const AnimalGame = () => {
     const [remainingAnimals, setRemainingAnimals] = useState<Animal[]>([]);
     const [isEndModal, setIsEndModal] = useState<boolean>(false);
 
-
     // inicializar animales aleatorios al montar el componente
     useEffect(() => {
         if (!animals || animals.length === 0) return;
@@ -79,6 +78,16 @@ const AnimalGame = () => {
         }
     }
 
+    const handleChangeMode = (modeSelected: "arcade" | "challenge") => {
+        setMode(modeSelected);
+        setStreak(0);
+
+        if (modeSelected === "arcade") {
+            setRemainingAnimals(animals);
+        }
+    };
+
+
     if (isLoading) return <p>Cargando animales...</p>
     if (error) return <p>Error {error.message}</p>
     if (!animals) return <p>Animales no encontrados</p>
@@ -91,14 +100,17 @@ const AnimalGame = () => {
                 {/* Botón para cambiar de modo */}
                 <div className='ChangeMode'>
                     <h2 className='AnimalGame-h2'>Modo de juego</h2>
-                    <button className='ChangeMode-btn' onClick={() => {
-                        setMode(mode === "arcade" ? "challenge" : "arcade");
-                        setStreak(0)
-                        if (mode === "arcade") setRemainingAnimals(animals);
-                    }}
-                    >
-                        Cambiar a {mode === "arcade" ? "Challenge" : "Arcade"}
-                    </button>
+                    <div className='ChangeMode-wrapperBtns'>
+                        <button className={`ChangeMode-btn ${mode === "challenge" ? "ChangeMode-btn--active" : ""}`}
+                            onClick={() => handleChangeMode("challenge")}>
+                            Challenge
+                        </button>
+                        <button className={`ChangeMode-btn ${mode === "arcade" ? "ChangeMode-btn--active" : ""}`}
+                            onClick={() => handleChangeMode("arcade")}>
+                            Arcade
+                        </button>
+
+                    </div>
                 </div>
 
                 <div className='StreakGame-wrapper'>
@@ -163,19 +175,19 @@ const AnimalGame = () => {
                 </div>
             )}
 
-<div className='ResetGame-wrapper'>
-            <button className='ResetGame-reset'
-                onClick={() => {
-                    if (mode === "arcade") {
-                        startNewRoundArcade();
-                        setStreak(0)
-                    } else {
-                        startNewRoundChallenge();
-                        setStreak(0)
-                    }
-                }}
-            >Reiniciar</button>
-</div>
+            <div className='ResetGame-wrapper'>
+                <button className='ResetGame-reset'
+                    onClick={() => {
+                        if (mode === "arcade") {
+                            startNewRoundArcade();
+                            setStreak(0)
+                        } else {
+                            startNewRoundChallenge();
+                            setStreak(0)
+                        }
+                    }}
+                >Reiniciar</button>
+            </div>
 
         </>
     );
