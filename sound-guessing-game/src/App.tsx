@@ -7,8 +7,10 @@ function App() {
 
   return (
     <div className='Wrapper'>
-      <Header />
-      <AnimalGame />
+      <div className='AnimalGame-wrapper'>
+        <Header />
+        <AnimalGame />
+      </div>
       <Footer />
     </div>
   )

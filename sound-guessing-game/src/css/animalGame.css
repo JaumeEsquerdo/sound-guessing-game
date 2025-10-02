@@ -1,18 +1,52 @@
 .AnimalGame-wrapper {
-    position: relative;
-    min-width: 740px;
+    min-width: 820px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    height: 600px;
+    height: auto;
+    border-radius: 12px;
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 1rem;
+    padding: 32px;
+}
+
+.ModeGame-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.StreakGame-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    gap: 12px;
     padding: 32px;
+    width: 100%;
+}
+
+.ChangeMode {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 32px;
+    display: grid;
+    justify-items: center;
+    gap: 12px;
 }
 
 .ChangeMode-btn {
@@ -34,10 +68,9 @@
     box-shadow: none;
 }
 
-.AnimalGame-reset {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.ResetGame-reset {
+    display: grid;
+    grid-template-columns: 1fr;
     cursor: pointer;
     padding: 8px;
     border-radius: var(--border-r);
@@ -46,12 +79,12 @@
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.AnimalGame-reset:hover {
+.ResetGame-reset:hover {
     transform: translateY(-4.4px);
     box-shadow: var(--box-s);
 }
 
-.AnimalGame-reset:active {
+.ResetGame-reset:active {
     transform: translateY(2px);
     box-shadow: none;
 }
@@ -61,8 +94,13 @@
     color: var(--color-txt);
 }
 
-.AnimalGame-p {
+.StreakGame-p {
     font-size: 1rem;
+    color: var(--color-txt);
+}
+
+.StreakGame-number {
+    font-size: 2rem;
     color: var(--color-txt);
 }
 
