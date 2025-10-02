@@ -136,9 +136,9 @@ const AnimalGame = () => {
 
                 {/* UN SOLO botón ? en medio */}
                 {currentAnimals.length === 2 && (
-                    <div className='Challenge-div'>
-                        <img className='Challenge-image' src="/q-mark.svg" alt="interrogación" />
-                        <button className='Challenge-sound' onClick={() => {/* reproducir audio */ }}>
+                    <div className='SoundGuessing-div'>
+                        <img className='SoundGuessing-image' src="/q-mark.svg" alt="interrogación" />
+                        <button className='SoundGuessing-sound' onClick={() => {/* reproducir audio */ }}>
                             play sonido
                         </button>
                         {mode === "challenge" && <p>Animales restantes: {remainingAnimals.length}</p>}
