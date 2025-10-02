@@ -132,10 +132,10 @@
     flex-direction: column;
     width: 320px;
     height: 380px;
-    border-radius: 16px;
+    border-radius: var(--border-r);
     border: 1px solid rgba(255, 255, 255, 0.3);
     background-color: rgb(18, 87, 87);
-
+    cursor: pointer;
     transition: background-color 0.3s ease-out;
 }
 
@@ -145,12 +145,6 @@
 
 .Option-name {
     color: white;
-}
-
-.Button-option {
-    cursor: pointer;
-    border-radius: var(--border-r);
-    border: none;
 }
 
 .Challenge-div {

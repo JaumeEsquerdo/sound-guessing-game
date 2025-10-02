@@ -125,12 +125,12 @@ const AnimalGame = () => {
             <div className='AnimalGame-options'>
                 {currentAnimals[0] && (
                     <button
-                        className='Button-option'
+                        className='Option-wrapper'
                         onClick={() => handleAnswer(currentAnimals[0].id)}
                     >
-                        <div className='Option-wrapper'>
-                            <p className='Option-name'>{currentAnimals[0].name.es}</p>
-                        </div>
+                        {/* aqui va una img */}
+                        <p className='Option-name'>{currentAnimals[0].name.es}</p>
+
                     </button>
                 )}
 
@@ -148,12 +148,12 @@ const AnimalGame = () => {
 
                 {currentAnimals[1] && (
                     <button
-                        className='Button-option'
+                        className='Option-wrapper'
                         onClick={() => handleAnswer(currentAnimals[1].id)}
                     >
-                        <div className='Option-wrapper'>
-                            <p className='Option-name'>{currentAnimals[1].name.es}</p>
-                        </div>
+                        {/* aqui va una img */}
+                        <p className='Option-name'>{currentAnimals[1].name.es}</p>
+
                     </button>
                 )}
             </div>
