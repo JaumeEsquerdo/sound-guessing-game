@@ -3,6 +3,7 @@ import { useAnimals } from '../hooks/useAnimals';
 import type { Animal } from '../interfaces/Animal';
 import { getRandomAnimals } from '../utils/utils';
 import '../css/animalGame.css';
+import { LiquidGlassCard } from './LiquidGlassCard';
 
 const AnimalGame = () => {
     const { data: animals = [], isLoading, error } = useAnimals();
@@ -98,7 +99,10 @@ const AnimalGame = () => {
 
             <div className='ModeGame-wrapper'>
                 {/* Botón para cambiar de modo */}
-                <div className='ChangeMode'>
+                <div className='ChangeMode'
+
+                >
+
                     <h2 className='AnimalGame-h2'>Modo de juego</h2>
                     <div className='ChangeMode-wrapperBtns'>
                         <button className={`ChangeMode-btn ${mode === "challenge" ? "ChangeMode-btn--active" : ""}`}
@@ -113,7 +117,7 @@ const AnimalGame = () => {
                     </div>
                 </div>
 
-                <div className='StreakGame-wrapper'>
+                <LiquidGlassCard containerStyle={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "12px" }}>
                     <button className='ResetGame-reset'
                         onClick={() => {
                             if (mode === "arcade") {
@@ -128,64 +132,75 @@ const AnimalGame = () => {
                     >Reiniciar</button>
                     <p className='StreakGame-p'>Racha actual</p>
                     <p className='StreakGame-number'>{streak}</p>
-                </div>
-            </div>
+                </LiquidGlassCard>
+
+
+
+            </div >
 
 
 
             {/* Lista de animales para elegir */}
-            <div className='AnimalGame-options'>
-                {currentAnimals[0] && (
-                    <button
-                        className='Option-wrapper'
-                        onClick={() => handleAnswer(currentAnimals[0].id)}
-                    >
-                        {/* aqui va una img */}
-                        <p className='Option-name'>{currentAnimals[0].name.es}</p>
+            < div className='AnimalGame-options' >
+                {
+                    currentAnimals[0] && (
+                        <button
+                            className='Option-wrapper'
+                            onClick={() => handleAnswer(currentAnimals[0].id)}
+                        >
+                            {/* aqui va una img */}
+                            <p className='Option-name'>{currentAnimals[0].name.es}</p>
 
-                    </button>
-                )}
+                        </button>
+                    )
+                }
 
                 {/* UN SOLO botón ? en medio */}
-                {currentAnimals.length === 2 && (
-                    <div className='SoundPlay-div'>
-                        <img className='SoundPlay-image' src="/mark-q.svg" alt="interrogación" />
-                        <button className='SoundPlay-sound' onClick={() => {/* reproducir audio */ }}>
-                            play sonido
+                {
+                    currentAnimals.length === 2 && (
+                        <div className='SoundPlay-div'>
+                            <img className='SoundPlay-image' src="/mark-q.svg" alt="interrogación" />
+                            <button className='SoundPlay-sound' onClick={() => {/* reproducir audio */ }}>
+                                play sonido
+                            </button>
+                            {mode === "challenge" && <p>Animales restantes: {remainingAnimals.length}</p>}
+                        </div>
+
+                    )
+                }
+
+                {
+                    currentAnimals[1] && (
+                        <button
+                            className='Option-wrapper'
+                            onClick={() => handleAnswer(currentAnimals[1].id)}
+                        >
+                            {/* aqui va una img */}
+                            <p className='Option-name'>{currentAnimals[1].name.es}</p>
+
                         </button>
-                        {mode === "challenge" && <p>Animales restantes: {remainingAnimals.length}</p>}
-                    </div>
-
-                )}
-
-                {currentAnimals[1] && (
-                    <button
-                        className='Option-wrapper'
-                        onClick={() => handleAnswer(currentAnimals[1].id)}
-                    >
-                        {/* aqui va una img */}
-                        <p className='Option-name'>{currentAnimals[1].name.es}</p>
-
-                    </button>
-                )}
-            </div>
+                    )
+                }
+            </div >
 
             {/* Modal de fin de challenge */}
-            {isEndModal && (
-                <div className="EndModal">
-                    <p>¡Has llegado al final de los animales disponibles!</p>
-                    <button
-                        onClick={() => {
-                            setRemainingAnimals(animals); // reinicia la bolsa
-                            setIsEndModal(false);          // cierra el modal
-                            setStreak(0);                  // reinicia racha si quieres
-                            startNewRoundChallenge(animals, false);
-                        }}
-                    >
-                        Reiniciar Challenge
-                    </button>
-                </div>
-            )}
+            {
+                isEndModal && (
+                    <div className="EndModal">
+                        <p>¡Has llegado al final de los animales disponibles!</p>
+                        <button
+                            onClick={() => {
+                                setRemainingAnimals(animals); // reinicia la bolsa
+                                setIsEndModal(false);          // cierra el modal
+                                setStreak(0);                  // reinicia racha si quieres
+                                startNewRoundChallenge(animals, false);
+                            }}
+                        >
+                            Reiniciar Challenge
+                        </button>
+                    </div>
+                )
+            }
 
 
         </>
