@@ -86,6 +86,9 @@
 }
 
 .ResetGame-reset {
+    position: absolute;
+    top: 12px;
+    right: 12px;
     display: grid;
     grid-template-columns: 1fr;
     cursor: pointer;
@@ -167,6 +170,8 @@
 
 .SoundPlay-image {
     width: 200px;
+    display: block;
+    margin: 0 auto;
 }
 
 .SoundPlay-sound {

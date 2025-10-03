@@ -114,6 +114,18 @@ const AnimalGame = () => {
                 </div>
 
                 <div className='StreakGame-wrapper'>
+                    <button className='ResetGame-reset'
+                        onClick={() => {
+                            if (mode === "arcade") {
+                                startNewRoundArcade();
+                                setStreak(0)
+                            } else {
+                                setRemainingAnimals(animals);
+                                startNewRoundChallenge(animals, false);
+                                setStreak(0)
+                            }
+                        }}
+                    >Reiniciar</button>
                     <p className='StreakGame-p'>Racha actual</p>
                     <p className='StreakGame-number'>{streak}</p>
                 </div>
@@ -137,7 +149,7 @@ const AnimalGame = () => {
                 {/* UN SOLO botón ? en medio */}
                 {currentAnimals.length === 2 && (
                     <div className='SoundPlay-div'>
-                        <img className='SoundPlay-image' src="/q-mark.svg" alt="interrogación" />
+                        <img className='SoundPlay-image' src="/mark-q.svg" alt="interrogación" />
                         <button className='SoundPlay-sound' onClick={() => {/* reproducir audio */ }}>
                             play sonido
                         </button>
@@ -175,20 +187,6 @@ const AnimalGame = () => {
                 </div>
             )}
 
-            <div className='ResetGame-wrapper'>
-                <button className='ResetGame-reset'
-                    onClick={() => {
-                        if (mode === "arcade") {
-                            startNewRoundArcade();
-                            setStreak(0)
-                        } else {
-                            setRemainingAnimals(animals);
-                            startNewRoundChallenge(animals, false);
-                            setStreak(0)
-                        }
-                    }}
-                >Reiniciar</button>
-            </div>
 
         </>
     );
