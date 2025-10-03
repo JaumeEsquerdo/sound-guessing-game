@@ -20,7 +20,7 @@ export function LiquidGlassCard({
                 backdropFilter: "blur(20px)",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
                 WebkitBackdropFilter: "blur(20px)",
-                border: "1px solid rgba(255,255,255,0.5)",
+                border: "1px solid rgba(255,255,255,0.6)",
                 overflow: "hidden",
                 padding: "32px",
                 width: "100%",
