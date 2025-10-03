@@ -182,7 +182,8 @@ const AnimalGame = () => {
                             startNewRoundArcade();
                             setStreak(0)
                         } else {
-                            startNewRoundChallenge();
+                            setRemainingAnimals(animals);
+                            startNewRoundChallenge(animals, false);
                             setStreak(0)
                         }
                     }}
