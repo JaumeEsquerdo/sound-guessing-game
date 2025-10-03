@@ -38,8 +38,8 @@ export function LiquidGlassCard({
                     width: "150%",
                     height: "150%",
                     backgroundImage: `
-            radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0.05) 20%),
-            radial-gradient(circle at 70% 70%, rgba(255,255,255,0.3), rgba(255,255,255,0) 40%)
+            radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), rgba(255,255,255,0.05) 20%),
+            radial-gradient(circle at 70% 70%, rgba(255,255,255,0.3), rgba(255,255,255,0) 30%)
           `,
                     zIndex: 0,
                     filter: "blur(30px)",
@@ -49,7 +49,7 @@ export function LiquidGlassCard({
                     y: ["0px", `-${10 + offset / 2}px`, `${10 + offset / 2}px`, "0px"],
                     rotate: [0, 1 + offset / 4, -1 - offset / 4, 0],
                     backgroundPosition: ["0% 0%", "50% 50%", "100% 100%", "0% 0%"],
-                    filter: ["blur(30px)", "blur(28px)", "blur(32px)", "blur(30px)"], // respira
+                    filter: ["blur(30px)", "blur(28px)", "blur(32px)", "blur(30px)"],
                 }}
                 transition={{
                     duration: 8,

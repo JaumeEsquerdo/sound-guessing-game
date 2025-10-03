@@ -99,9 +99,7 @@ const AnimalGame = () => {
 
             <div className='ModeGame-wrapper'>
                 {/* Botón para cambiar de modo */}
-                <div className='ChangeMode'
-
-                >
+                <div className='ChangeMode'>
 
                     <h2 className='AnimalGame-h2'>Modo de juego</h2>
                     <div className='ChangeMode-wrapperBtns'>
@@ -134,8 +132,6 @@ const AnimalGame = () => {
                     <p className='StreakGame-number'>{streak}</p>
                 </LiquidGlassCard>
 
-
-
             </div >
 
 
@@ -155,7 +151,6 @@ const AnimalGame = () => {
                     )
                 }
 
-                {/* UN SOLO botón ? en medio */}
                 {
                     currentAnimals.length === 2 && (
                         <div className='SoundPlay-div'>

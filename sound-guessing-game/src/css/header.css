@@ -1,4 +1,4 @@
-.Header {
+/* .Header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,8 +14,7 @@
     justify-items: center;
     grid-template-columns: 1fr;
     padding: 32px;
-
-}
+} */
 
 .Header-h1 {
     font-size: 3rem;
